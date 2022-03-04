@@ -1,0 +1,30 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mis-test:mis-test@192.168.3.136:27500,192.168.3.137:27500,192.168.3.138:27500/mis-test?authSource=mis-test&connectTimeoutMS=300000&minPoolSize=3&maxPoolSize=20
+  jackson:
+    default-property-inclusion: non_null
+  profile:
+    active: prod
+
+server:
+  compression:
+    min-response-size: 100KB
+  port: 8089
+
+logging:
+  level:
+    root: info
+  file: logs/server.log
+
+dmai:
+  attendance:
+    hosts:
+      - 192.168.18.30
+      - 192.168.18.14
+      - 192.168.18.29
+      - 192.168.18.219
+      - 192.168.18.8
+      - 192.168.18.7
+#    secret: attendance123456
+    record-cron-expression: "0 30 */1 * * ?"
