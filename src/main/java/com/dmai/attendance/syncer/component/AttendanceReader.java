@@ -47,7 +47,6 @@ public class AttendanceReader {
             try {
                 //接收事件处理
                 SensorEvents events = new SensorEvents(attendanceDao, cache, this);
-                log.info("events: {}",events);
                 Dispatch zkem = createZkemKeeper(ip, dispatch ->  new DispatchEvents(dispatch, events, dispatch.getProgramId()));
                 readAndSave(zkem, ip);
                 //注册事件， 实时记录考勤记录
@@ -98,6 +97,7 @@ public class AttendanceReader {
     private <R> Dispatch createZkemKeeper(String ip, Function<Dispatch, R> event) {
         log.info("Staring to connect {}", ip);
         // 如果初始化的时候找不到 jre 下面的 jacob.dll 会卡住
+//        LibraryLoader.loadJacobLibrary();
         ComThread.InitMTA();
         log.info("InitMTA end.");
         // https://www.javaquery.com/2013/12/comjacobcomcomfailexception-cant-get.html，考虑解决 Can't get object clsid from progid 的问题

@@ -3,7 +3,6 @@ package com.dmai.attendance.syncer.controller;
 import com.dmai.attendance.syncer.api.BaseResponse;
 import com.dmai.attendance.syncer.api.SearchAttendanceRequest;
 import com.dmai.attendance.syncer.component.AttendanceReader;
-import com.dmai.attendance.syncer.config.ServerProperties;
 import com.dmai.attendance.syncer.service.UserAttendanceService;
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import lombok.RequiredArgsConstructor;

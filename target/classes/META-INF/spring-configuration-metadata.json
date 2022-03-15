@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "dmai.attendance",
+      "type": "com.dmai.attendance.syncer.config.ServerProperties",
+      "sourceType": "com.dmai.attendance.syncer.config.ServerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dmai.attendance.hosts",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.dmai.attendance.syncer.config.ServerProperties"
+    },
+    {
+      "name": "dmai.attendance.record-cron-expression",
+      "type": "java.lang.String",
+      "sourceType": "com.dmai.attendance.syncer.config.ServerProperties"
+    }
+  ],
+  "hints": []
+}

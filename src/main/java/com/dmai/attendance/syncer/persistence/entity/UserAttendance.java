@@ -14,15 +14,20 @@ import java.time.format.DateTimeFormatter;
 @Data
 @Document(collection = "user_attendance")
 public class UserAttendance implements Serializable {
-    private  static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-M-D H:m:s");
-    private  static final ZoneOffset ZONE_OFFSET = ZoneOffset.of("+8");
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-M-d H:m:s");
+    private static final ZoneOffset ZONE_OFFSET = ZoneOffset.of("+8");
 
     @Id
     private String id;
+
     private String userId;
+
     private String name;
+
     private LocalDateTime dateTime;
-    private  Type type = Type.SYSTEM;
+
+    private Type type = Type.SYSTEM;
+
     /** 补签原因，补签的记录才有值 */
     private String reason;
 

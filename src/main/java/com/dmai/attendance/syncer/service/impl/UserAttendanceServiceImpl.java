@@ -6,7 +6,10 @@ import com.dmai.attendance.syncer.persistence.entity.UserAttendance;
 import com.dmai.attendance.syncer.service.UserAttendanceService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 
@@ -18,10 +21,11 @@ import java.util.*;
 
 
 @Slf4j
+@Component
 @RequiredArgsConstructor
 @Service
 public class UserAttendanceServiceImpl implements UserAttendanceService {
-
+   private final MongoTemplate mongoTemplate;
     /**
      * 凌晨 5 点之前被认定是昨天的离开时间
      */
